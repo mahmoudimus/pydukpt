@@ -1,0 +1,24 @@
+pydukpt
+Copyright (c) 2026 Mahmoud Abdelkader
+Licensed under the MIT License (see LICENSE).
+
+pydukpt is written from ANSI X9.24-1:2009 and ISO 9564-1. It contains no
+source code from other DUKPT implementations.
+
+- pydukpt.compat reproduces the public API (class, method, attribute and
+  argument names) of dukpt 1.0.1 (https://pypi.org/project/dukpt/1.0.1/,
+  https://github.com/allen246/dukpt, derived from
+  https://github.com/chokepoint/DUKPT; MIT License, Copyright (c) 2017
+  Chokepoint), so that its users can switch. Its implementation is new.
+
+- Test vectors in tests/test_published_vectors.py are the ANSI X9.24-1:2009
+  Annex A.4.2 values as transcribed in moov-io/dukpt
+  (https://github.com/moov-io/dukpt, Apache License 2.0),
+  pkg/des/des_test.go at commit 9cb72e64a3eab8ec2dd1b9824b9f8ebba2b5ad4d.
+  tests/fixtures/vectors.json was computed with moov-io/dukpt and
+  cross-checked with varhenn/dukpt_des_pinblock
+  (https://github.com/varhenn/dukpt_des_pinblock, BSD 2-Clause License,
+  Copyright (c) 2022, varhenn) and dukpt 1.0.1; neither is included or
+  required at run time. tools/vectors/moov builds against moov-io/dukpt as a
+  Go module dependency; tools/vectors/generate.py imports varhenn's module
+  from a separate checkout.
